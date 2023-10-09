@@ -11,12 +11,12 @@ song.onloadedmetadata = function(){
     progress.max = song.duration;
     song.currentTime = initialTime;
     progress.value = song.currentTime;
-    
 }
 
-// Play the audio when the page loads
-window.addEventListener("load", function() {
-    playPause.click();
+document.addEventListener("load", function () {
+    song.play();
+    ctrlIcon.classList.remove("fa-play");
+    ctrlIcon.classList.add("fa-pause");
 });
 
 
