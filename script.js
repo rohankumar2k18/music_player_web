@@ -3,11 +3,21 @@ let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
 let playPause = document.getElementById("playPause");
 
+const initialTime = 90;
+
+
 
 song.onloadedmetadata = function(){
     progress.max = song.duration;
+    song.currentTime = initialTime;
     progress.value = song.currentTime;
+    
 }
+
+// Play the audio when the page loads
+window.addEventListener("load", function() {
+    playPause.click();
+});
 
 
 playPause.addEventListener("click", ()=>{
